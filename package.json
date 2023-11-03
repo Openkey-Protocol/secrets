@@ -1,5 +1,5 @@
 {
-    "name": "@cirip/secrets",
+    "name": "@openkey/secrets",
     "version": "2.0.0",
     "description": "Shamir's threshold secret sharing scheme for JavaScript.",
     "main": "secrets.js",
