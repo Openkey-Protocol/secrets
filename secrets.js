@@ -22,9 +22,13 @@
     if (typeof define === "function" && define.amd) {
         // AMD. Register as an anonymous module.
         define([], function() {
-            /*eslint-disable no-return-assign */
-            return (root.secrets = factory(window.crypto))
-            /*eslint-enable no-return-assign */
+            try{
+                /*eslint-disable no-return-assign */
+                return (root.secrets = factory(window.crypto))
+                /*eslint-enable no-return-assign */
+            }catch(e){
+                module.exports = factory(require("crypto"))
+            }
         })
     } else if (typeof exports === "object") {
         // Node. Does not work with strict CommonJS, but
